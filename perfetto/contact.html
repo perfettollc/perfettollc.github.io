@@ -342,7 +342,7 @@
                     <p>We’re here to help with all your maintenance and contracting needs. Reach out to Perfetto today  <br /> — we’re just a call or click away.</p>
                 </div>
                 <div class="form-inner">
-                    <form method="" action="" id="" class="default-form"> 
+                    <form method="" action="" id="submit-form" class="default-form"> 
                         <div class="row clearfix">
                             <div class="col-lg-6 col-md-6 col-sm-12 form-group">
                                 <input type="text" name="username" placeholder="Full Name" required="">
@@ -372,6 +372,25 @@
         </section>
         <!-- contact-section end -->
 
+<script>
+			$("#submit-form").submit((e)=>{
+			e.preventDefault()
+			$.ajax({
+			url:"https://script.google.com/macros/s/AKfycbwlr2TYQNskjaCA4IR0lQ_SFsb7XPNX8RYDr-rrGN5C8CLvgJtJcJRK3hWBye1_q21B/exec",
+			data:$("#submit-form").serialize(),
+			method:"post",
+			success:function (response){
+			alert("Our sales team will contact you shortly. Thank you!")
+			window.location.reload()
+			//window.location.href="https://google.com"
+			},
+			error:function (err){
+			alert("Something Error")
+			
+			}
+			})
+			})
+			</script>
 
 
 
